@@ -11,7 +11,7 @@ The following image will help understand the organization of code in this repo. 
 ![](data/images/timeline.png)
 
 # How To Run Code
-First install libraries RAPIDS, XGBoost, PyTorch, and pandarallel. Next follow these 3 main steps with substeps:
+This code ran successfully on 20xCPU 256GB and 1xGPU 32GB. Using less memory may cause memory errors. To run this code, first install libraries RAPIDS (cuDF cuML), XGBoost, and Pandarallel in addition to basic Python libraries Pandas, NumPy, Pickle, Scikit-Learn, Matplotlib, and Tqdm. The script to compute item embeddings requires PyTorch and Merlin-Dataloader. Next follow these 3 main steps with substeps:
 * **(1) Download Data from Kaggle**
 * => Run `/data/make_train_valid.ipynb`
 * **(2) Train Models**
