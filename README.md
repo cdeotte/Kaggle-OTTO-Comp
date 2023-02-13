@@ -1,7 +1,7 @@
 # 3rd Place Solution - Kaggle-OTTO-Comp - Chris' Part
 In Kaggle's OTTO competition, we need to build a model that predicts what a user will click, cart, and order in the future at online ecommerce website https://otto.de We are given 4.5 weeks of data and must predict the next 0.5 week. More details are explained at Kaggle [here][1] and final leaderboard is [here][2]. Our team of Benny, Chris, Giba, and Theo won 3rd place cash gold! Our detailed writeup is published [here][3](Chris), [here][4](Theo), and [here][5](Benny)
 
-# Create 15th Place Gold Single Model
+# Code for 15th Place Gold Single Model
 The code in this GitHub repo, will create Chris' 15th place solo gold single model which achieves CV 0.601 and LB 0.601. When we ensemble the single models of Benny, Chris, Giba, Theo, we achieve 3rd place cash gold with Private LB 0.6038 and Public LB 0.6044. 
 
 The following image will help understand the organization of code in this repo. First we train a model on the first 3.5 weeks of data. Then we infer our model on 4.5 weeks of data. Therefore we will basically run the same pipeline twice:
