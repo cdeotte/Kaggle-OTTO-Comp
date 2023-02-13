@@ -4,12 +4,14 @@ In Kaggle's OTTO competition, we need to build a model that predicts what a user
 # Code for 15th Place Gold Single Model
 The code in this GitHub repo, will create Chris' 15th place solo gold single model which achieves CV 0.601 and LB 0.601. When we ensemble the single models of Benny, Chris, Giba, Theo, we achieve 3rd place cash gold with Private LB 0.6038 and Public LB 0.6044. 
 
-The following image will help understand the organization of code in this repo. First we train a model on the first 3.5 weeks of data. Then we infer our model on 4.5 weeks of data. Therefore we will basically run the same pipeline twice:
+This model is a "candidate rerank" model explained [here][6], [here][7], and [here][3]. Our challenge is to predict 20 items for each target per user (the 3 targets are click, cart, order) that we suspect user will engage in the future. First we generate 100 item candidates (per target per user) using co-visitiation matrices (and heuristic rules). Next we merge features onto the user item pairs. Lastly we train a GBT reranker model to select 20 from 100.
+
+The following image will help understand the organization of code in this repo. First we train our model on the first 3.5 weeks of data. Then we infer our model on 4.5 weeks of data. Therefore we will basically run the same pipeline twice:
 
 ![](data/images/timeline.png)
 
 # How To Run Code
-My single model is a "candidate rerank" model. Therefore first we generate 100 item candidates for each user. Then we select 20 using XGB ranker model. Here are 3 main steps with substeps:
+First install libraries RAPIDS, XGBoost, PyTorch, and pandarallel. Next follow these 3 main steps with substeps:
 * **(1) Download Data from Kaggle**
 * => Run `/data/make_train_valid.ipynb`
 * **(2) Train Models**
@@ -68,3 +70,5 @@ ended.
 [3]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/383013
 [4]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/382975
 [5]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/386497
+[6]: https://www.kaggle.com/code/cdeotte/candidate-rerank-model-lb-0-575
+[7]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/370210
