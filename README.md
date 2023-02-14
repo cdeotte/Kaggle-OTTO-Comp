@@ -1,8 +1,8 @@
 # 3rd Place Solution - Kaggle-OTTO-Comp - Chris' Part
-In Kaggle's OTTO competition, we need to build a model that predicts what a user will click, cart, and order in the future at online ecommerce website https://otto.de We are given 4.5 weeks of data and must predict the next 0.5 week. More details are explained at Kaggle [here][1] and final leaderboard is [here][2]. Our team of Benny, Chris, Giba, and Theo won 3rd place cash gold! Our detailed writeup is published [here][3](Chris), [here][4](Theo), and [here][5](Benny)
+In Kaggle's OTTO competition, we need to build a model that predicts what a user will click, cart, and order in the future at online ecommerce website https://otto.de We are given 4.5 weeks of data and must predict the next 0.5 week. More details are explained at Kaggle [here][1] and final leaderboard is [here][2]. Our team of Benny, Chris, Giba, and Theo won 3rd place cash gold! Our detailed writeup is published [here][3](Chris), [here][4](Theo), and [here][5](Benny) with final submission Kaggle submit notebook [here][8]
 
 # Code for 15th Place Gold Single Model
-The code in this GitHub repo, will create Chris' 15th place solo gold single model which achieves CV 0.601 and LB 0.601. When we ensemble the single models of Benny, Chris, Giba, Theo, we achieve 3rd place cash gold with Private LB 0.6038 and Public LB 0.6044. 
+The code in this GitHub repo, will create Chris' 15th place solo gold single model which achieves CV 0.601 and LB 0.601. When we ensemble the single models of Benny, Chris, Giba, Theo, we achieve 3rd place cash gold with Private LB 0.6038 and Public LB 0.6044. Final submission Kaggle submit notebook is published [here][8]
 
 This model is a "candidate rerank" model explained [here][6], [here][7], and [here][3]. Our challenge is to predict 20 items for each target per user (the 3 targets are click, cart, order) that we suspect user will engage in the future. First we generate 100 item candidates (per target per user) using co-visitiation matrices (and heuristic rules). Next we merge features onto the user item pairs. Lastly we train a GBT reranker model to select 20 from 100.
 
@@ -72,3 +72,4 @@ ended.
 [5]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/386497
 [6]: https://www.kaggle.com/code/cdeotte/candidate-rerank-model-lb-0-575
 [7]: https://www.kaggle.com/competitions/otto-recommender-system/discussion/370210
+[8]: https://www.kaggle.com/code/cdeotte/3rd-place-team-g-b-d-t-0-604
