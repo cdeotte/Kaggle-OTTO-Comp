@@ -30,7 +30,7 @@ This code ran successfully on 20xCPU 256GB and 1xGPU 32GB. Using less memory may
 * => merge LB candidates and features for click model with `/infer/make_parquets_LB/script.ipynb`
 * => infer models with `/infer/inference_LB/script.ipynb`
 
-After running the steps above, the file `/data/submission_final/submission_v186v406v412_with_click_oof.csv` is generated. 
+After running the steps above, the file `/data/submission_final/submission_chris_v186v406v412.csv` is generated. 
 This file will score Private LB 0.6012 and Public LB 0.6010. To achieve a better CV and LB, we can train CatBoost with the
 code `/train/ranker_model/CAT-200-orders.ipynb` and `/train/ranker_model/CAT-203-carts.ipynb` and change inference to infer
 CatBoost. The result is Private LB 0.6018 and Public LB 0.6016. We discovered that CatBoost was better after the competition
